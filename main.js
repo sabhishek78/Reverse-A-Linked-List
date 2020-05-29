@@ -1,14 +1,11 @@
 function reverse(linkedList){
-
-  var reversedList={};
-      reversedList['value']=linkedList.value;
-      reversedList['next']=undefined;
-while(linkedList['next']!==undefined){
-  linkedList=linkedList.next;
-  var temp={};
-  temp['value']=linkedList.value;
-  temp['next']=reversedList;
-  reversedList=temp;
+ var reversedList={};
+ reversedList['value']=linkedList.value;
+ reversedList['next']=undefined;
+ while(linkedList['next']!==undefined){
+ linkedList=linkedList.next;
+ var newNode={'value':linkedList.value,'next':reversedList};
+ reversedList=newNode;
 }
  return reversedList; 
 }
